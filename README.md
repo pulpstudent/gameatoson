@@ -1,2 +1,0 @@
-# gameatoson
-gameato_bot
