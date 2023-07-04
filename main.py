@@ -87,4 +87,4 @@ def zoomg_game( s1 , s2 , chat_id ) :
                 # sleep n2
                 time.sleep(s2)
 
-print(zoomg_game(600,120,-1001924808520))
+print(zoomg_game(7200,120,-1001924808520))
