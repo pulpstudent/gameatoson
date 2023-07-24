@@ -8,7 +8,7 @@ update_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_d
 parameters = {
     "chat_id" : "-1001924808520" ,
     "photo" : "https://gameato.ir/wp-content/uploads/2022/11/مگ.png" ,
-    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1- added update_tag" + "\n" + "2- added title to every post" + "\n" + "3- added point_id to control Text length of posts" + "\n" + "\n" + "#ggdevs"
+    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1.RUN" + "\n" + "#ggdevs"
 }
 
 resp_update = requests.get(update_url, data= parameters)
@@ -93,6 +93,7 @@ def zoomg_game( s1 , s2 , chat_id , point_id ) :
                 #gg = db_gg[random.randint(0,17)]
 
                 # test_bot = -1001924808520
+                # gameato = -1001745459269
 
                 base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
                 parameters = {
@@ -111,5 +112,5 @@ def zoomg_game( s1 , s2 , chat_id , point_id ) :
 
 
 # print zoomg_bot
-print(zoomg_game(7200,420,-1001924808520,2))
+print(zoomg_game(7200,420,-1001745459269,2))
 
