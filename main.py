@@ -3,7 +3,7 @@
 import requests
 
 # update version 
-update_version = "update1.1test"
+update_version = "update1.5"
 update_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
 parameters = {
     "chat_id" : "-1001924808520" ,
@@ -99,7 +99,7 @@ def zoomg_game( s1 , s2 , chat_id , point_id ) :
                 parameters = {
                     "chat_id" : str(chat_id) ,
                     "photo" : url ,
-                    "caption" : emoji_1 + title + "\n" + "\n" + emoji_2 + description + "\n" + "\n" + cta + "\n" + "---------------" + "\n" + "🆔@gameato" + "\n" + "🌐gameato.ir" + "\n" + update_version
+                    "caption" : emoji_1 + title + "\n" + "\n" + emoji_2 + description + "\n" + "\n" + cta + "\n" + "---------------" + "\n" + "🆔@gameato" + "\n" + "🌐gameato.ir" 
                 }
 
                 resp = requests.get(base_url, data= parameters)
