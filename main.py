@@ -165,7 +165,7 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
                     # url_pic
                     pic = soup_product.find("img" , attrs= {"id" : "main-pic" })
                     pic = str(pic)
-                    url_pic = pic[31:-3]
+                    url_pic = pic[31:-47]
 
                     # sit
                     sit = soup_product.find("span" , class_= "value").text
