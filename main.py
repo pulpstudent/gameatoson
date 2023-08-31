@@ -3,12 +3,12 @@
 import requests
 
 # update version 
-update_version = "update2.0"
+update_version = "update2.1"
 update_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
 parameters = {
     "chat_id" : "-1001924808520" ,
     "photo" : "https://gameato.ir/wp-content/uploads/2022/11/مگ.png" ,
-    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1- pspro crawler just activated ->" + "\n" + "1.1- crawls all <new> pspro product every 89 loops (about every one week)" + "\n" + "1.2- prints <url>, <title>, <model> and <price> of each new product" + "\n" + "1.3- for gameato | bot" + "\n" + "2- market.gameato crawler just activated ->" + "\n" + "2.1 crawls all <new> ad every s1+s2 sleep time" + "\n" + "2.2 prints <title>, <pic>, <sit>, <seller_name>, <rregion> and <price> of each new product" + "\n" + "2.3- for gameato | bot and gameato" + "\n" + "\n" + "#ggdevs"
+    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1- fixed some shits" + "\n" + "#ggdevs"
 }
 
 resp_update = requests.get(update_url, data= parameters)
@@ -44,6 +44,8 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
     title_list_mp = []
     url_list_mp = []
     counter_mp = 0 
+    base_mp_url = "https://gameato.ir/wp-content/uploads/2022/06/gameato.jpg"
+
 
         # pspro_bot
 
@@ -166,6 +168,10 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
                     pic = soup_product.find("img" , attrs= {"id" : "main-pic" })
                     pic = str(pic)
                     url_pic = pic[31:-47]
+                    if url_pic[-1] == "g" : 
+                        url_pic = url_pic
+                    else : 
+                        url_pic = base_mp_url
 
                     # sit
                     sit = soup_product.find("span" , class_= "value").text
