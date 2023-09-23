@@ -3,12 +3,12 @@
 import requests
 
 # update version 
-update_version = "update2.1"
+update_version = "update2.2"
 update_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
 parameters = {
     "chat_id" : "-1001924808520" ,
     "photo" : "https://gameato.ir/wp-content/uploads/2022/11/مگ.png" ,
-    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1- fixed some shits" + "\n" + "\n" + "#ggdevs" 
+    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1- fixed some shits" + "\n" + "2- Fixed repeated message sending if the server is unavailable" + "\n" + "\n" + "#ggdevs" 
 }
 
 resp_update = requests.get(update_url, data= parameters)
@@ -27,6 +27,8 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
 
 
     # basics 
+
+    general_sum = 0
 
         # zoomg_bot
 
@@ -61,6 +63,8 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         time.sleep(s1)
 
         # 1. START zoomg_bot from gameato_bot ----------------------------------------------------------- #
+
+        general_sum += 1 
 
         url_list_z = []
 
@@ -125,10 +129,13 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
                 }
 
                 resp = requests.get(base_url, data= parameters)
-                print(resp.text)
-                print(counter_z)
-                counter_z += 1 
-
+                if general_sum > 3 : 
+                    print(resp.text)
+                    print(counter_z)
+                    counter_z += 1 
+                else : 
+                    counter_z += 1 
+                    
                 # sleep z_s2
                 time.sleep(z_s2)
 
@@ -138,6 +145,8 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         time.sleep(s2)
 
         # 2. START mpproduct_bot from gameato_bot ----------------------------------------------------- #
+
+        general_sum += 1
 
         url_list_mp = []
 
@@ -210,9 +219,12 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
 
                     # main resp 
                     resp = requests.get(base_url, data= parameters)
-                    print(resp.text)
-                    print(counter_mp)
-                    counter_mp += 1 
+                    if general_sum > 3 : 
+                        print(resp.text)
+                        print(counter_mp)
+                        counter_mp += 1 
+                    else : 
+                        counter_mp += 1 
 
                     # static resp -> 
                     base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
@@ -222,7 +234,10 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
                         "caption" : "🔰" + "خرید " + title + "\n" + "\n" + "🔹" + "فروشنده: " + seller_name + "\n" + "🔹" + "وضعیت کالا: " + sit + "\n" + "🔹" + "محله: " + rregion +  "\n" + "🔹" + "قیمت فروشنده: " + price + "\n" + "لینک مشاهده و خرید: " + "\n" + i + "\n" + "\n" + cta_mp + "\n" + "\n" + "---------------" + "\n" + "#آگهی_فروش" + "\n" + "🆔@gameato" + "\n" + "🌐market.gameato.ir"
                     }
                     resp = requests.get(base_url, data= parameters)
-                    print(resp.text)
+                    if general_sum > 3 : 
+                        print(resp.text)
+                    else:
+                        abcde = 0 
 
 
 
@@ -234,6 +249,8 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         pspr_bot_numb += 1
 
         # 3. START pspro_bot from gameato_bot ----------------------------------------------------- #
+
+        general_sum += 1
 
         if pspr_bot_numb % 89 == 0 : 
             r = requests.get("https://pspro.ir/index.php?route=product/search&search=&sort=p.date_available&order=DESC&limit=100")
@@ -288,8 +305,11 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
                         "caption" : pspro_sum_ + "-" + pspro_title + "\n" + "\n" + "🔹" + "مدل: " + pspro_model + "\n" + "🔹" + "قیمت: " + pspro_price + "\n" + "\n" + pspro_url + "\n" + "\n" + "#محصول_جدید"
                     }
                     resp = requests.get(base_url, data= parameters)
-                    print(pspro_sum)
-                    print(resp.text)
+                    if general_sum > 3 : 
+                        print(pspro_sum)
+                        print(resp.text)
+                    else : 
+                        abcd = 0
 
                     # sleep time
                     time.sleep(2)
