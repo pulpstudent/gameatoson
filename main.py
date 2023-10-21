@@ -328,5 +328,5 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         # gameato = -1001745459269
         # gameato | bot = -1001975079060
 
-print(gameato_bot(3600,240,-1001745459269,3,3600,60,-1001745459269))
+print(gameato_bot(10,600,-1001745459269,3,3600,60,-1001745459269))
 
