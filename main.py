@@ -64,7 +64,7 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
 
         # 1. START zoomg_bot from gameato_bot ----------------------------------------------------------- #
 
-        general_sum += 500
+        general_sum += 1
 
         url_list_z = []
 
@@ -143,11 +143,11 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         # 1. END zoomg_bot from gameato_bot ----------------------------------------------------------- #
 
         # sleep s2
-        time.sleep(s2)
+        ## time.sleep(s2)
 
         # 2. START mpproduct_bot from gameato_bot ----------------------------------------------------- #
 
-        general_sum += 1
+        general_sum += 500
 
         url_list_mp = []
 
