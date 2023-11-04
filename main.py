@@ -60,11 +60,11 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
     while True : 
 
         # sleep n1
-        time.sleep(s1)
+        ## time.sleep(s1)
 
         # 1. START zoomg_bot from gameato_bot ----------------------------------------------------------- #
 
-        general_sum += 1 
+        general_sum += 500
 
         url_list_z = []
 
