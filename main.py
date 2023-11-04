@@ -148,98 +148,98 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
 
         # 2. START mpproduct_bot from gameato_bot ----------------------------------------------------- #
 
-        general_sum += 500
+        # general_sum += 1
 
-        url_list_mp = []
+        # url_list_mp = []
 
-        r = requests.get("https://market.gameato.ir/products/index")
-        soup = bs(r.text , "html.parser")
-        product_links = soup.find( "div" , class_="products-grid").find_all("a")
-        urls = [link["href"] for link in product_links]
-        for iurl in urls :
-            url_list_mp.append(iurl)
+        # r = requests.get("https://market.gameato.ir/products/index")
+        # soup = bs(r.text , "html.parser")
+        # product_links = soup.find( "div" , class_="products-grid").find_all("a")
+        # urls = [link["href"] for link in product_links]
+        # for iurl in urls :
+            # url_list_mp.append(iurl)
 
-        for i in url_list_mp: 
-            if i in title_list_mp : 
-                print("same shit")
-                print(counter_mp)
-                counter_mp += 1 
-            else: 
-                title_list_mp.append(i)
-                r_product = requests.get(i)
-                soup_product = bs(r_product.text , "html.parser")
+        # for i in url_list_mp: 
+            # if i in title_list_mp : 
+                # print("same shit")
+                # print(counter_mp)
+                # counter_mp += 1 
+            # else: 
+                # title_list_mp.append(i)
+                # r_product = requests.get(i)
+                # soup_product = bs(r_product.text , "html.parser")
 
                 # filter 
-                filter = soup_product.find("span" , class_ = "pirsic-type").text
-                if filter == "گیمر" : 
+                # filter = soup_product.find("span" , class_ = "pirsic-type").text
+                # if filter == "گیمر" : 
                     # title 
-                    title = soup_product.find("h1" , class_="product-title").text
+                    # title = soup_product.find("h1" , class_="product-title").text
 
                     # url_pic
-                    pic = soup_product.find("img" , attrs= {"id" : "main-pic" })
-                    pic = str(pic)
-                    url_pic = pic[31:-47]
-                    if url_pic[-1] == "g" : 
-                        url_pic = url_pic
-                    else : 
-                        url_pic = base_mp_url
+                    # pic = soup_product.find("img" , attrs= {"id" : "main-pic" })
+                    # pic = str(pic)
+                    # url_pic = pic[31:-47]
+                    # if url_pic[-1] == "g" : 
+                        # url_pic = url_pic
+                    # else : 
+                        # url_pic = base_mp_url
 
                     # sit
-                    sit = soup_product.find("span" , class_= "value").text
+                    # sit = soup_product.find("span" , class_= "value").text
 
                     # seller_name 
-                    seller_name = soup_product.find("span" , class_= "pirsic-name").text
+                    # seller_name = soup_product.find("span" , class_= "pirsic-name").text
 
                     # rregion 
-                    rregion = soup_product.find("div" , class_="sc-loc").text
+                    # rregion = soup_product.find("div" , class_="sc-loc").text
 
                     # price 
-                    price = soup_product.find_all("span" , class_="value")
-                    sum = 0 
-                    for letter in price : 
-                        sum += 1 
-                        r_price = letter
-                        if sum == 3 : 
-                            break
-                    price = str(r_price)
-                    price = price[20:-7]
+                    # price = soup_product.find_all("span" , class_="value")
+                    # sum = 0 
+                    # for letter in price : 
+                        # sum += 1 
+                        # r_price = letter
+                        # if sum == 3 : 
+                            # break
+                    # price = str(r_price)
+                    # price = price[20:-7]
 
                     # run 
 
-                    cta_mp = db_cta_mp[random.randint(0,10)]
+                    # cta_mp = db_cta_mp[random.randint(0,10)]
                     # test_bot = -1001924808520
                     # gameato = -1001745459269
                     # gameato | bot = -1001975079060
 
 
-                    base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
-                    parameters = {
-                        "chat_id" : str(mp_chat_id) ,
-                        "photo" : url_pic ,
-                        "caption" : "🔰" + "خرید " + title + "\n" + "\n" + "🔹" + "فروشنده: " + seller_name + "\n" + "🔹" + "وضعیت کالا: " + sit + "\n" + "🔹" + "محله: " + rregion +  "\n" + "🔹" + "قیمت فروشنده: " + price + "\n" + "لینک مشاهده و خرید: " + "\n" + i + "\n" + "\n" + cta_mp + "\n" + "\n" + "---------------" + "\n" + "#آگهی_فروش" + "\n" + "🆔@gameato" + "\n" + "🌐market.gameato.ir"
-                    }
+                    # base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
+                    # parameters = {
+                        # "chat_id" : str(mp_chat_id) ,
+                        # "photo" : url_pic ,
+                        #"caption" : "🔰" + "خرید " + title + "\n" + "\n" + "🔹" + "فروشنده: " + seller_name + "\n" + "🔹" + "وضعیت کالا: " + sit + "\n" + "🔹" + "محله: " + rregion +  "\n" + "🔹" + "قیمت فروشنده: " + price + "\n" + "لینک مشاهده و خرید: " + "\n" + i + "\n" + "\n" + cta_mp + "\n" + "\n" + "---------------" + "\n" + "#آگهی_فروش" + "\n" + "🆔@gameato" + "\n" + "🌐market.gameato.ir"
+                    # }
 
                     # main resp 
-                    if general_sum > 3 : 
-                        resp = requests.get(base_url, data= parameters)
-                        print(resp.text)
-                        print(counter_mp)
-                        counter_mp += 1 
-                    else : 
-                        counter_mp += 1 
+                    # if general_sum > 3 : 
+                        # resp = requests.get(base_url, data= parameters)
+                        # print(resp.text)
+                        # print(counter_mp)
+                        # counter_mp += 1 
+                    # else : 
+                        # counter_mp += 1 
 
                     # static resp -> 
-                    base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
-                    parameters = {
-                        "chat_id" : -1001975079060 ,
-                        "photo" : url_pic ,
-                        "caption" : "🔰" + "خرید " + title + "\n" + "\n" + "🔹" + "فروشنده: " + seller_name + "\n" + "🔹" + "وضعیت کالا: " + sit + "\n" + "🔹" + "محله: " + rregion +  "\n" + "🔹" + "قیمت فروشنده: " + price + "\n" + "لینک مشاهده و خرید: " + "\n" + i + "\n" + "\n" + cta_mp + "\n" + "\n" + "---------------" + "\n" + "#آگهی_فروش" + "\n" + "🆔@gameato" + "\n" + "🌐market.gameato.ir"
-                    }
-                    if general_sum > 3 : 
-                        resp = requests.get(base_url, data= parameters)
-                        print(resp.text)
-                    else:
-                        abcde = 0 
+                    # base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
+                    # parameters = {
+                        # "chat_id" : -1001975079060 ,
+                        # "photo" : url_pic ,
+                        # "caption" : "🔰" + "خرید " + title + "\n" + "\n" + "🔹" + "فروشنده: " + seller_name + "\n" + "🔹" + "وضعیت کالا: " + sit + "\n" + "🔹" + "محله: " + rregion +  "\n" + "🔹" + "قیمت فروشنده: " + price + "\n" + "لینک مشاهده و خرید: " + "\n" + i + "\n" + "\n" + cta_mp + "\n" + "\n" + "---------------" + "\n" + "#آگهی_فروش" + "\n" + "🆔@gameato" + "\n" + "🌐market.gameato.ir"
+                    # }
+                    # if general_sum > 3 : 
+                        # resp = requests.get(base_url, data= parameters)
+                        # print(resp.text)
+                    # else:
+                        # abcde = 0 
 
 
 
@@ -329,7 +329,6 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         # gameato = -1001745459269
         # gameato | bot = -1001975079060
 
-# print(gameato_bot(10,600,-1001745459269,3,3600,60,-1001745459269))
 print(gameato_bot(1,1,-1001745459269,3,3600,1,-1001745459269))
 
 
