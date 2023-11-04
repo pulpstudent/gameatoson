@@ -8,7 +8,7 @@ update_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_d
 parameters = {
     "chat_id" : "-1001924808520" ,
     "photo" : "https://gameato.ir/wp-content/uploads/2023/10/Group-4055.png" ,
-    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1- Defined general_sum " + "\n" + "2- Fixed repeated message sending if the server is unavailable" + "\n" + "3- Temporary commented pspro bot" + "\n" + "\n" + "#ggdevs" 
+    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "11- Defined general_sum " + "\n" + "2- Fixed repeated message sending if the server is unavailable" + "\n" + "3- Temporary commented pspro bot" + "\n" + "\n" + "#ggdevs" 
 }
 
 resp_update = requests.get(update_url, data= parameters)
