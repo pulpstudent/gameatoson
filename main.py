@@ -60,7 +60,7 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
     while True : 
 
         # sleep n1
-        ## time.sleep(s1)
+        time.sleep(s1)
 
         # 1. START zoomg_bot from gameato_bot ----------------------------------------------------------- #
 
@@ -143,7 +143,8 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         # 1. END zoomg_bot from gameato_bot ----------------------------------------------------------- #
 
         # sleep s2
-        ## time.sleep(s2)
+
+        time.sleep(s2)
 
         # 2. START mpproduct_bot from gameato_bot ----------------------------------------------------- #
 
@@ -328,5 +329,7 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
         # gameato = -1001745459269
         # gameato | bot = -1001975079060
 
-print(gameato_bot(10,600,-1001745459269,3,3600,60,-1001745459269))
+# print(gameato_bot(10,600,-1001745459269,3,3600,60,-1001745459269))
+print(gameato_bot(1,1,-1001745459269,3,3600,1,-1001745459269))
+
 
