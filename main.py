@@ -8,7 +8,7 @@ update_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_d
 parameters = {
     "chat_id" : "-1001924808520" ,
     "photo" : "https://gameato.ir/wp-content/uploads/2023/10/Group-4055.png" ,
-    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "11- Defined general_sum " + "\n" + "2- Fixed repeated message sending if the server is unavailable" + "\n" + "3- Temporary commented pspro bot" + "\n" + "\n" + "#ggdevs" 
+    "caption" :  update_version + "\n" + "\n" + "Changes : " + "\n" + "1- Defined general_sum " + "\n" + "2- Fixed repeated message sending if the server is unavailable" + "\n" + "3- Temporary commented pspro bot" + "\n" + "\n" + "#ggdevs" 
 }
 
 resp_update = requests.get(update_url, data= parameters)
@@ -207,9 +207,9 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
                     # run 
 
                     cta_mp = db_cta_mp[random.randint(0,10)]
-                    test_bot = -1001924808520
-                    gameato = -1001745459269
-                    gameato | bot = -1001975079060
+                    # test_bot = -1001924808520
+                    # gameato = -1001745459269
+                    # gameato | bot = -1001975079060
 
 
                     base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
@@ -228,7 +228,7 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
                     else : 
                         counter_mp += 1 
 
-                    static resp -> 
+                    # static resp -> 
                     base_url = 'https://api.telegram.org/bot6140992753:AAHMGN0s0H1SLjIlt_or9S2Tu_dRGaaLqdQ/sendPhoto'
                     parameters = {
                         "chat_id" : -1001975079060 ,
