@@ -64,7 +64,7 @@ def gameato_bot(s1 , z_s2 , z_chat_id , z_point_id , s2 , mp_s2 , mp_chat_id) :
 
         # 1. START zoomg_bot from gameato_bot ----------------------------------------------------------- #
 
-        general_sum += 11
+        general_sum += 1
 
         url_list_z = []
 
